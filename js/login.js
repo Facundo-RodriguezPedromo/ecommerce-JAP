@@ -1,86 +1,87 @@
-// Variables
-var formulario_login = document.querySelector(".formulario__login");
-var formulario_register = document.querySelector(".formulario__register");
-var contenedor_login_register = document.querySelector(".contenedor__login-register");
-var caja_trasera_login = document.querySelector(".caja__trasera-login");
-var caja_trasera_register = document.querySelector(".caja__trasera-register");
+       /* ENTREGA 1 FUNCION Y MOVIMIENTOS DE LOGIN Y REGISTER */
+      
+//* USER AND REGISTRATION FORMS SENT TO E-COMMERCE *//
 
-// Redirige de registro a  e_commerce
+                /* FORMS VALIDATION */
 
-document.addEventListener("DOMContentLoaded", function(e){
-
-    document.getElementById("vuelvePagina").onclick = function(e) {
-        window.location.href = "./inicio.html";
-          };
+         //* Validacion De Usuario e-commerce *//       
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("UserFormID").addEventListener('submit', validarFormularioDeUsuario); 
     });
     
-    document.addEventListener("DOMContentLoaded", function(e){
+    function validarFormularioDeUsuario(evento) {
+      evento.preventDefault();
+  
+      var usuario = document.getElementById('UserEmailID').value;
+      var clave = document.getElementById('UserPasswordID').value;
+      if (usuario.length == 0 || clave.length == 0) 
+      {
+        swal('Los datos Correo Electronico y Contraseña son obligatorios', '', 'error');
+       
+        }
+       if (usuario.length >=1 && clave.length >=1)
+       {
+        return window.location.href = "./inicio.html";
+        } 
+  }
+  
+            //* Validacion De Usuario Que Se Registra *//
+  document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("RegistrationFormID").addEventListener('submit', validarFormularioDeRegistro); 
+    });
     
-        document.getElementById("vuelvePagina2").onclick = function(e) {
-            window.location.href = "./inicio.html";
-              };
-        });
+    function validarFormularioDeRegistro(evento) {
+      evento.preventDefault();
+  
+      var usuarioRegister = document.getElementById('NameTheRegisterID').value;
+      var usuarioMailRegister = document.getElementById('MailTheRegisterID').value;
+      var usuarioNameRegister = document.getElementById('NameTheRegisterID').value;
+      var clavePasswordRegister = document.getElementById('PasswordTheRegisterID').value;
+      if(usuarioRegister.length == 0 || usuarioMailRegister.length == 0 || 
+         usuarioNameRegister.length == 0 || clavePasswordRegister.length ==0  ) {
+          swal('Debe completar todos los datos', '', 'error');
+          }
+          if (usuarioRegister.length >=1 && usuarioMailRegister.length >=1 && usuarioNameRegister.length >=1 
+            && clavePasswordRegister.length >=1)
+       {
+        return window.location.href = "./inicio.html";
+        } 
+  }
 
-//Acciones para login y registro
+/** MOVIMIENTO DE CAJAS / LOGIN Y REGISTER **/
 
-function anchoPagina(){
+var FormLogin = document.querySelector(".ClassFormLogin");
+var FormRegister = document.querySelector(".ClassFormRegister");
+var ContainerLoginRegister = document.querySelector(".ClassContainerLoginRegister");
+var LoginBackBox = document.querySelector(".ClassLoginBackBox");
+var RegisterBackBox = document.querySelector(".ClassRegisterBackBox");
 
-    if (window.innerWidth > 850){
-        caja_trasera_register.style.display = "block";
-        caja_trasera_login.style.display = "block";
-    }else{
-        caja_trasera_register.style.display = "block";
-        caja_trasera_register.style.opacity = "1";
-        caja_trasera_login.style.display = "none";
-        formulario_login.style.display = "block";
-        contenedor_login_register.style.left = "0px";
-        formulario_register.style.display = "none";   
-    }
+  function Registration(){
+    FormRegister.style.display = "block";
+    ContainerLoginRegister.style.left = "410px";
+    FormLogin.style.display = "none";
+    RegisterBackBox.style.opacity = "0";
+    LoginBackBox.style.opacity = "1";
 }
 
-anchoPagina();
 
-
-function iniciarSesion(){
-    if (window.innerWidth > 850){
-        formulario_login.style.display = "block";
-        contenedor_login_register.style.left = "10px";
-        formulario_register.style.display = "none";
-        caja_trasera_register.style.opacity = "1";
-        caja_trasera_login.style.opacity = "0";
-    }else{
-        formulario_login.style.display = "block";
-        contenedor_login_register.style.left = "0px";
-        formulario_register.style.display = "none";
-        caja_trasera_register.style.display = "block";
-        caja_trasera_login.style.display = "none";
-        }
-    }
-
-function registro(){
-    if (window.innerWidth > 850){
-        formulario_register.style.display = "block";
-        contenedor_login_register.style.left = "410px";
-        formulario_login.style.display = "none";
-        caja_trasera_register.style.opacity = "0";
-        caja_trasera_login.style.opacity = "1";
-    }else{
-        formulario_register.style.display = "block";
-        contenedor_login_register.style.left = "0px";
-        formulario_login.style.display = "none";
-        caja_trasera_register.style.display = "none";
-        caja_trasera_login.style.display = "block";
-        caja_trasera_login.style.opacity = "1";
-        }
+  function Login(){
+        FormLogin.style.display = "block";
+        ContainerLoginRegister.style.left = "10px";
+        FormRegister.style.display = "none";
+        RegisterBackBox.style.opacity = "1";
+        LoginBackBox.style.opacity = "0";
 }
 
-document.getElementById("btn__iniciar-sesion").addEventListener("click", iniciarSesion);
-document.getElementById("btn__registrarse").addEventListener("click", registro);
-window.addEventListener("resize", anchoPage);
+  
+
+document.getElementById("btn__iniciar-sesion").addEventListener("click", Login);
+document.getElementById("btn__registrarse").addEventListener("click", Registration);
+
+/** FONDO ANIMADO PENDIENTE */ 
 
 
-
-
+/** ESTO VINO CON LA PROPUESTA LO DEJO APARTE **/
 
 /**Función que se ejecuta una vez que se haya lanzado el evento de
 que el documento se encuentra cargado, es decir, se encuentran todos los

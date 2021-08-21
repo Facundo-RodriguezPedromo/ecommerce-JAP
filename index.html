@@ -13,6 +13,8 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/estilos-login.css" rel="stylesheet">
+  
+  
   <style>
     html, body{
       height: 100%;
@@ -36,50 +38,63 @@
     }
   </style>
 </head>
-
+  <!-- ENTREGA 1 / LOGIN Y REGISTER / PARA LOS USUARIOS -->
 <body>
+  
+  
+  <!-- CONTENIDO PRINCIPAL DE ESTE HTML (LOGIN Y REGISTER) -->
   <main>
-    <div class="contenedor__todo">
-        <div class="caja__trasera">
-            <div class="caja__trasera-login">
-                <h3>Bienvenido a JAP e_commerce </h3>
-                <button id="btn__iniciar-sesion">Iniciar Sesión</button>
-            </div>
+    <div class="ContainerOfEverything">
+          <!-- BACK BOX -->
+        <div class="ClassBackBox">
+          <div class="ClassLoginBackBox">
+            <h3>Bienvenido a JAP e_commerce</h3>
+            <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+          </div>
 
-            <div class="caja__trasera-register">
-                <h3>¿Aún no tienes una cuenta?</h3>
-                <button id="btn__registrarse">Crear una cuenta</button>
-            </div>
+          <div class="ClassRegisterBackBox">
+            <h3>¿Aún no tienes una cuenta?</h3>
+            <button id="btn__registrarse">Crear una cuenta</button>
+          </div>
+        </div>    
+           <!-- FORMULARIOS CON SUS CAMPOS A COMPLETAR -->
+      <div class="ClassContainerLoginRegister">
 
-        </div>
+        <!--LOGIN-->
+        <form id="UserFormID" method="post" action="" class="ClassFormLogin">
+            <h2>Iniciar Sesión</h2>
+            <input id="UserEmailID" type="text" placeholder="Correo Electronico" >
+            <input id="UserPasswordID" type="password" placeholder="Contraseña" >
+            <button type="submit" id="Entrar" >Entrar</button>
+        </form>
 
-      <!--Formulario de Login y Registro-->
-              <div class="contenedor__login-register">
-                  <!--Login-->
-                  <form onsubmit= "return false" action="" class="formulario__login" required="true" >
-                      <h2>Iniciar Sesión</h2>
-                      <input type="text" placeholder="Correo Electronico">
-                      <input type="password" placeholder="Contraseña">
-                      <button type="submit" id="vuelvePagina" >Entrar</button>
-                  </form>
-                  <!--Registro-->
-                  <form onsubmit="return false" action="" class="formulario__register" required="true">
-                      <h2>Registrarse</h2>
-                      <input type="text" placeholder="Nombre completo">
-                      <input type="text" placeholder="Correo Electronico">
-                      <input type="text" placeholder="Usuario">
-                      <input type="password" placeholder="Contraseña">
-                      <button type="submit" id="vuelvePagina2" >Registrarse</button>
-                  </form>
-              </div>
+        <!--REGISTER-->
+        <form id="RegistrationFormID" method="post" action="" class="ClassFormRegister">
+            <h2>Registrarse</h2>
+            <input id="NameTheRegisterID" type="text" placeholder="Nombre completo" >
+            <input id="MailTheRegisterID" type="text" placeholder="Correo Electronico" >
+            <input id="NameTheRegisterID" type="text" placeholder="Usuario" >
+            <input id="PasswordTheRegisterID" type="password" placeholder="Contraseña" >
+            <button type="submit" id="Registrarse" >Registrarse</button>
+        </form>
+      </div> 
     </div>
   </main>
                        <script src="js/init.js"></script>
-                       <script src="js/login.js"></script>
+                       <script src="js/login.js"></script> 
+                       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                       <!-- FONDO ANIMADO PENDIENTE -->
+
+                       
 </body>
 
 
+  
 
+
+
+         <!-- ESTO VINO CON LA PROPUESTA LO DEJO APARTE -->
+         
   <!-- <body class="text-center">
   <div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
@@ -89,5 +104,5 @@
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
   </div> -->
-</body>
+
 </html>
