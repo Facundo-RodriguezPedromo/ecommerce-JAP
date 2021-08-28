@@ -44,7 +44,6 @@ function validarFormularioDeRegistro(evento) {
   }
   if (usuarioRegister.length >= 1 && usuarioMailRegister.length >= 1 && usuarioNameRegister.length >= 1
     && clavePasswordRegister.length >= 1) {
-      
     return window.location.href = "./inicio.html";
   }
 }
