@@ -82,6 +82,16 @@ document.getElementById("btn__registrarse").addEventListener("click", Registrati
 /** nombre de usuario en la barra */
 
 sessionStorage.setItem("UserEmailID", Usuario)
+/** login with google */
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+
+  console.log('Id Profile: ' + profile.getId()); 
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); 
+console.log('Id Token '+googleUser.getAuthResponse().id_token );
+}
 
 /** FONDO ANIMADO PENDIENTE */
 
