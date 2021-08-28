@@ -91,6 +91,7 @@ function onSignIn(googleUser) {
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail()); 
 console.log('Id Token '+googleUser.getAuthResponse().id_token );
+window.location.href = "./inicio.html";
 }
 
 /** FONDO ANIMADO PENDIENTE */
