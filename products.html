@@ -30,7 +30,7 @@
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
         <div id="logout"></div>
       </div>
-    </nav>
+    </nav> <br>
     <!-- <div class="container p-5">
       <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
         <h4 class="alert-heading">¡A trabajar! :)</h4>
@@ -40,40 +40,69 @@
       </div>
     </div> -->
     
-    <!-- ENTREGA 1 TABLA CON ESTILOS DE BOSTRAP PARA RECIBIR DATOS JSON -->
-
-    <style>
-        body{
-            background-color: rgb(155, 185, 241);
-            color:white;
-        }
-        table thead{
-            background-color: #716da0;
-            color: white;
-        }
-    </style>
-  </head>
-  <body>
-
-    <div class="container mt-4 shadow-lg p3 mb-5 bg-body rounded">
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>FOTO</th>
-                    <th>NOMBRE</th>
-                    <th>DESCRIPCION</th>
-                    <th>COSTO</th>
-                    <th>DIVISA</th>
-                    <th>RECUENTO VENDIDO</th>
-                </tr>
-            </thead>
-            <tbody id="data">
-            </tbody>
-
-        </table>
-
+   
+<!--ENTREGA 2 FILTROS DE BUSQUEDA-->
+<div class="row justify-content-end">
+  <div class="col-md-6"></div>
+    <div class="col-md-6 col-sm-12 mb-1 container">
+      <div class="row container p-0 m-0">
+        <div class="col">
+          <p class="font-weight-normal text-right my-2">Filtrar por precio:</p>
+        </div>
+        <div id="RangoPrecioMinDiv" class="col">
+          <input  class="form-control" type="number" placeholder="min." id="rangoPrecioMin">
+        </div>
+        <div id="RangoPrecioMaxDiv" class="col">
+          <input  class="form-control" type="number" placeholder="máx." id="rangoPrecioMax">
+        </div>
+        <div class="col-3 p-0">
+          <div class="btn-group" role="group">
+            <button class="btn btn-light btn-block" id="FiltrarPrecios">Filtrar</button>
+            <button class="btn btn-link btn-sm" id="LimpiarFiltroPrecios" type="reset">Limpiar</button>
+          </div>
+        </div>
+      </div>
     </div>
+</div>
+</div> 
+
+<!-- fin ENTREGA 2 FILTROS DE BUSQUEDA-->
+
+<!-- ENTREGA 1 TABLA CON ESTILOS DE BOSTRAP PARA RECIBIR DATOS JSON -->
+
+<style>
+  body{
+      background-color: rgb(155, 185, 241);
+      color:white;
+  }
+  table thead{
+      background-color: #716da0;
+      color: white;
+  }
+</style>
+
+<div class="container mt-4 shadow-lg p3 mb-5 bg-body rounded" id="datalist">
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <td>FOTO</td>
+            <td>NOMBRE</td>
+            <td>DESCRIPCION</td>
+            <td>COSTO</td>
+            <td>DIVISA</td>
+            <td>RECUENTO VENDIDO</td>
+        </tr>
+    </thead>
+    <tbody id="data">
+    </tbody>
+
+</table>
+
+</div>
+
+<!-- fin ENTREGA 1 TABLA CON ESTILOS DE BOSTRAP PARA RECIBIR DATOS JSON -->
     
+  
     <!-- <footer class="text-muted bg-light">
       <div class="container">
         <p class="float-right">

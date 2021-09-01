@@ -86,12 +86,12 @@ sessionStorage.setItem("UserEmailID", Usuario)
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
 
-  console.log('Id Profile: ' + profile.getId()); 
+  console.log('Id Profile: ' + profile.getId());
   console.log('Name: ' + profile.getName());
   console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); 
-console.log('Id Token '+googleUser.getAuthResponse().id_token );
-window.location.href = "./inicio.html";
+  console.log('Email: ' + profile.getEmail());
+  console.log('Id Token ' + googleUser.getAuthResponse().id_token);
+  window.location.href = "./inicio.html";
 }
 
 /** FONDO ANIMADO PENDIENTE */

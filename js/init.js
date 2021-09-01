@@ -53,7 +53,7 @@ var getJSONData = function (url) {
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
   if (document.getElementById("logout")) {
-    showLogout();
+    //showLogout();
   }
   if (document.getElementById("signOut"))
     document.getElementById("signOut").onclick = function () {
