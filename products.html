@@ -28,7 +28,8 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <div id="logout"></div>
+        <div id="UsuarioActualLogin"></div>
+        <div id="UsuarioActualRegister"></div>
       </div>
     </nav> <br>
     <!-- <div class="container p-5">
@@ -39,9 +40,40 @@
         <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
       </div>
     </div> -->
+
+
+
+<!--ENTREGA 2 ODEN DE MAYOR A MENOR Y VICE-->
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col text-right">
+          <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+            <label class="btn btn-light" id="sortByCountMax" onclick="oredenarMayoraMenor()">
+              <input type="radio" name="options" autocomplete="off" /><i
+                class="fas fa-angle-double-up"    
+              ></i
+              >Precio
+            </label>
+            <label class="btn btn-light" id="sortByCountMin" onclick="oredenarMenoraMayor()">
+              <input type="radio" name="options" autocomplete="off" /><i
+                class="fas fa-angle-double-down"
+              ></i
+              >Precio
+            </label>
+            <label class="btn btn-light" id="sortByCountCantidad"  onclick="oredenarRelevancia()">
+              <input type="radio" name="options" autocomplete="off" /><i
+                class="fas fa-sort-amount-down mr-1"
+              ></i
+              >Cant. Vendidos
+            </label>
+          </div>
+        </div>
+      </div>
     
    
-<!--ENTREGA 2 FILTROS DE BUSQUEDA-->
+<!--ENTREGA 2 FILTROS DE BUSQUEDA PRECIO-->
 <div class="row justify-content-end">
   <div class="col-md-6"></div>
     <div class="col-md-6 col-sm-12 mb-1 container">
@@ -103,15 +135,14 @@
 <!-- fin ENTREGA 1 TABLA CON ESTILOS DE BOSTRAP PARA RECIBIR DATOS JSON -->
     
   
-    <!-- <footer class="text-muted bg-light">
+     <footer class="text-muted bg-light">
       <div class="container">
         <p class="float-right">
           <a href="#">Volver arriba</a>
         </p>
-        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+        
       </div>
-    </footer> -->
+    </footer>
     
     <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
     <script src="js/jquery-3.4.1.min.js"></script>

@@ -52,17 +52,23 @@ var getJSONData = function (url) {
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
-  if (document.getElementById("logout")) {
-    //showLogout();
-  }
-  if (document.getElementById("signOut"))
-    document.getElementById("signOut").onclick = function () {
-      signOut();
-    };
-});
+  document.getElementById("UsuarioActualLogin") 
+  
 
-let agregarHtml = "";
-agregarHtml =
+
+let agregarHtmldeUser = "";
+agregarHtmldeUser =
   `<a class="py-2 d-none d-md-inline-block" href="#"> ` + user + ` </a>`;
 
-document.getElementById("logout").innerHTML = agregarHtml;
+document.getElementById("UsuarioActualLogin").innerHTML = agregarHtmldeUser; 
+
+
+
+
+
+
+
+
+});
+
+

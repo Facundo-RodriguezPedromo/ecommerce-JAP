@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             <td>${data[i].cost}</td>
             <td>${data[i].currency}</td>
             <td>${data[i].soldCount}</td></tr>`
-
+         /*ENTREGA 2 RESETEO PARA LOS CAMPOS MIN Y MAX*/
             $(document).ready(function() {
                 $('#LimpiarFiltroPrecios').click(function() {
                   $('input[type="number"]').val('');
@@ -56,5 +56,153 @@ document.addEventListener("DOMContentLoaded", function (e) {
             }
         } 
 }
-});    /*ENTREGA 2 RESETEO PARA LOS CAMPOS MIN Y MAX*/
+});   /**MENOR A MAYOR */
+
+function oredenarMenoraMayor(){
+    
+    aux=[];
+    
+    let url = 'https://japdevdep.github.io/ecommerce-api/product/all.json'
+    fetch(url)
+        .then(response => response.json())
+        .then(data => mostrarData(data))
+        .catch(error => console.log(error))
+    const mostrarData = (data) => {
+        aux=[];
+        aux2=[];
+        for(i=0;i<data.length;i++){
+            
+            aux.push(data[i]);
+
+        }
+        
+          
+        //console.log(data[i].cost);
+         //cosole.log(aux.cost);
+         aux2 = aux.sort(function (a, b) {
+             if (a.cost < b.cost) { return -1; }
+             if (a.cost > b.cost) { return 1; }
+             return 0;
+             
+         });
+         let OrdenadosMayor = ''
+         for(j=0;j < aux2.length; j++){
+            OrdenadosMayor += `<tr><td><img src="${aux2[j].imgSrc}" width="300" height="200" </td>
+            <td>${aux2[j].name}</td>
+            <td>${aux2[j].description}</td>
+            <td>${aux2[j].cost}</td>
+            <td>${aux2[j].currency}</td>
+            <td>${aux2[j].soldCount}</td></tr>`
+            
+
+         } document.getElementById('data').innerHTML = OrdenadosMayor
+         console.log(aux2)
+
+    
+      
+        
+    } 
+
+} 
+/**MAYOR A MENOR */
+function oredenarMayoraMenor(){
+    
+    aux=[];
+    
+    let url = 'https://japdevdep.github.io/ecommerce-api/product/all.json'
+    fetch(url)
+        .then(response => response.json())
+        .then(data => mostrarData(data))
+        .catch(error => console.log(error))
+    const mostrarData = (data) => {
+        aux=[];
+        aux2=[];
+        for(i=0;i<data.length;i++){
+            
+            aux.push(data[i]);
+
+        }
+        
+          
+        //console.log(data[i].cost);
+         //cosole.log(aux.cost);
+         aux2 = aux.sort(function (a, b) {
+             if (a.cost < b.cost) { return 1; }
+             if (a.cost > b.cost) { return -1; }
+             return 0;
+             
+         });
+         let OrdenadosMenor = ''
+         for(j=0;j < aux2.length; j++){
+            OrdenadosMenor += `<tr><td><img src="${aux2[j].imgSrc}" width="300" height="200" </td>
+            <td>${aux2[j].name}</td>
+            <td>${aux2[j].description}</td>
+            <td>${aux2[j].cost}</td>
+            <td>${aux2[j].currency}</td>
+            <td>${aux2[j].soldCount}</td></tr>`
+            
+
+         } document.getElementById('data').innerHTML = OrdenadosMenor
+         console.log(aux2)
+
+    
+      
+        
+    } 
+
+} 
+
+
+/**RECUENTO VENDIDOS */
+
+
+function oredenarRelevancia(){
+    
+    aux=[];
+    
+    let url = 'https://japdevdep.github.io/ecommerce-api/product/all.json'
+    fetch(url)
+        .then(response => response.json())
+        .then(data => mostrarData(data))
+        .catch(error => console.log(error))
+    const mostrarData = (data) => {
+        aux=[];
+        aux2=[];
+        for(i=0;i<data.length;i++){
+            
+            aux.push(data[i]);
+
+        }
+        
+          
+        //console.log(data[i].cost);
+         //cosole.log(aux.cost);
+         aux2 = aux.sort(function (a, b) {
+             if (a.soldCount < b.soldCount) { return 1; }
+             if (a.soldCount > b.soldCount) { return -1; }
+             return 0;
+             
+         });
+         let OrdenadosRelevancia = ''
+         for(j=0;j < aux2.length; j++){
+            OrdenadosRelevancia += `<tr><td><img src="${aux2[j].imgSrc}" width="300" height="200" </td>
+            <td>${aux2[j].name}</td>
+            <td>${aux2[j].description}</td>
+            <td>${aux2[j].cost}</td>
+            <td>${aux2[j].currency}</td>
+            <td>${aux2[j].soldCount}</td></tr>`
+            
+
+         } document.getElementById('data').innerHTML =  OrdenadosRelevancia
+         console.log(aux2)
+
+    
+      
+        
+    } 
+
+} 
+
+
+
 
