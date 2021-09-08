@@ -14,7 +14,7 @@ const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
 var user = sessionStorage.getItem("UserEmailID");
-
+var register = sessionStorage.getItem("NameTheRegisterID");
 var showSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "block";
 };
@@ -61,13 +61,20 @@ agregarHtmldeUser =
   `<a class="py-2 d-none d-md-inline-block" href="#"> ` + user + ` </a>`;
 
 document.getElementById("UsuarioActualLogin").innerHTML = agregarHtmldeUser; 
+ 
+
+});
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  document.getElementById("UsuarioActualRegister") 
+  
 
 
+let agregarHtmldeUser = "";
+agregarHtmldeUser =
+  `<a class="py-2 d-none d-md-inline-block" href="#"> ` + register + ` </a>`;
 
-
-
-
-
+document.getElementById("UsuarioActualRegister").innerHTML = agregarHtmldeUser; 
 
 });
 
