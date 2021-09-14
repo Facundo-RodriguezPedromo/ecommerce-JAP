@@ -7,13 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <title>eMercado - Todo lo que busques está aquí</title>
-
+  <!-- Font Awesome Icon Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/" />
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+  <!-- eSTILOS ICONOS-->
+  <link href="https://file.myfontastic.com/XY7ox4FgKQJSYK8UhFNUw/icons.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet" />
   <link href="css/bootstrap.min.css" rel="stylesheet" />
   <link href="css/styles.css" rel="stylesheet" />
-  <link href="css/info-htmlgalery.css" rel="stylesheet" />
+
+  <!-- ESTILOS DE LETRA -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100;0,200;0,500;1,100;1,200;1,300&family=Playfair+Display:ital@1&display=swap"
+    rel="stylesheet">
+  <link href="css/PRODUCT-INFO.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -30,11 +41,8 @@
     </div>
   </nav>
 
-
-
   <!-- GALERIA DE IMAGENES AUTO -->
-
-  <h1 style="text-align:center"> Chevrolet Onix Joy _ Potenciá tu actitud ! </h1>
+  <h1 style="text-align:center">Chevrolet Onix Joy _ Potenciá tu actitud !</h1>
   <ul class="galeria">
     <li><a href=""><img src="img/prod1.jpg" alt=""></a></li>
     <li><a href=""><img src="img/prod1_1.jpg" alt=""></a></li>
@@ -42,15 +50,14 @@
     <li><a href=""><img src="img/prod1_3.jpg" alt=""></a></li>
     <li><a href=""><img src="img/prod1_4.jpg" alt=""></a></li>
   </ul>
+
+  <!-- INFO DEL AUTO CON TABLA -->
   <div class="container mt-5">
     <div class="text-center p-4">
-      <h2>Descripción del producto</h2>
-      <p class="lead">
-        Encontrarás aquí toda la información del producto seleccionado.
-      </p>
+      <p class="lead"><strong>Encontrarás aquí toda la información del producto
+          seleccionado:</strong></p>
     </div>
   </div>
-
 
   <style>
     body {
@@ -70,32 +77,48 @@
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
-          <td>NOMBRE</td>
-          <td>DESCRIPCION</td>
-          <td>COSTO</td>
-          <td>DIVISA</td>
-          <td>RECUENTO VENDIDOS</td>
-          <td>CATEGORIA</td>
-          <td>PRODUCTOS RELACIONADOS</td>
+          <td style="color: bisque;">NOMBRE</td>
+          <td style="color: bisque;">DESCRIPCION</td>
+          <td style="color: bisque;">COSTO</td>
+          <td style="color: bisque;">DIVISA</td>
+          <td style="color: bisque;">RECUENTO VENDIDOS</td>
+          <td style="color: bisque;">CATEGORIA</td>
+          <td style="color: bisque;">PRODUCTOS RELACIONADOS</td>
         </tr>
       </thead>
-      <tbody style="background-color:salmon" id="dataProductID">
-      </tbody>
-
+      <tbody style="background-color:rgba(178, 207, 226, 0.863)" id="dataProductID"></tbody>
     </table>
+  </div> <br>
 
-  </div> <br> <br>
+  <h2>Opiniones de nuestros de clientes</h2>
+  <hr class="line">
 
+  <!-- CAJA DE COMENTARIOS-->
+  <main>
+    <h2><strong>Tu que opinas de este producto?</strong></h2>
+    <div id="caja_comentarios">
+      <div>
+        <input id="NombreUsuarioComentario" type="text" placeholder="Ingrese su Nombre" />
+      </div> <br>
+      <textarea id="comenta_aqui" rows="8" cols="50" placeholder="Compartinos tu opinion"></textarea> <br>
+      <button type="button" id="button">Enviar</button>
+      <div id="cajaParaFecha"></div>
+    </div>
 
+    <!-- CAJAS QUE CARGAN JSON EN EL HTML / Y NUEVOS COMENTARIOS-->
+    <div class="container-comments" id="CajaDeNuevoComentario"></div>
+  </main> <br>
 
+  <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a> <br>
+  <h3 class="icon-hand-peace-o"> <strong style="font-family: cursive;">Tu e_commerce favorito</strong></h3>
 
-  <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>
       </p>
   </footer>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -104,10 +127,13 @@
       <div></div>
     </div>
   </div>
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src='js/jquery.js'></script>
+
 </body>
 
 </html>
