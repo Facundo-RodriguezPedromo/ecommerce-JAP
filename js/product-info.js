@@ -70,7 +70,21 @@ document.addEventListener("DOMContentLoaded", function (e) {
   }
 });
 
+
+
 //ENTREGA 3 ... NUEVOS COMENTARIOS
+
+window.onload = function fechaNueva(){
+  var fecha = new Date(); //Fecha actual
+  var mes = fecha.getMonth()+1; //obteniendo mes
+  var dia = fecha.getDate(); //obteniendo dia
+  var ano = fecha.getFullYear(); //obteniendo año
+  if(dia<10)
+    dia='0'+dia; //agrega cero si el menor de 10
+  if(mes<10)
+    mes='0'+mes //agrega cero si el menor de 10
+  document.getElementById('fechaActual').value=ano+"-"+mes+"-"+dia;
+}
 document.addEventListener("DOMContentLoaded", function (e) {
       var boton = document.getElementById('button');
          
@@ -79,10 +93,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
       var suNombre = document.getElementById('NombreUsuarioComentario').value;
       document.getElementById('comenta_aqui').value = ""; //limpia luego de usarlos
       document.getElementById('NombreUsuarioComentario').value = "";
+
+      
      
        var scoreUser = document.getElementById('estrellasHTML').value;
        var coloreaEstrellas = '';
-
+       var FechaNueva =   document.getElementById('fechaActual').value; 
   for (var S = 0; S < scoreUser; S++ )
       coloreaEstrellas += `<span class="fa fa-star" style="color:orange"/>`;
       
@@ -93,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                        <div class="info-comments">
                          <div class="header">
                            <h4>${suNombre}</h4>
-                           <h5>fecha</h5>
+                           <h5>${FechaNueva}</h5>
                          </div>
                            <p>${comentaAqui}</p>
                          <div>
