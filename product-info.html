@@ -35,8 +35,12 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <div id="UsuarioActualLogin"></div>
+      <ul class="navUser" id="UsuarioActualLogin">
+          <li><a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a></li>
+          <li><a class="py-2 d-none d-md-inline-block" href="Mi_perfil.html">Mi perfil</a></li>
+          <li><a class="py-2 d-none d-md-inline-block" href="index.html">Cerrar sesión</a></li>
+      </ul>
+      
       <div id="UsuarioActualRegister"></div>
     </div>
   </nav>
@@ -90,8 +94,8 @@
     </table>
   </div> <br>
 
-  <h2>Opiniones de nuestros clientes</h2>
-<hr class="line">
+  <h2>Opiniones de nuestros de clientes</h2>
+  <hr class="line">
 
   <!-- CAJA DE COMENTARIOS-->
   <main>
@@ -99,16 +103,16 @@
     <div id="caja_comentarios">
       <div>
         <input id="NombreUsuarioComentario" type="text" placeholder="Ingrese su Nombre" />
+        <h5>Entre 1 y 5 puntos, cuanto le das a este producto?</h5>
+        <input id="estrellasHTML" type="number" min="1" max="5"/>
       </div> <br>
       <textarea id="comenta_aqui" rows="8" cols="50" placeholder="Compartinos tu opinion"></textarea> <br>
       <button type="button" id="button">Enviar</button>
       <div id="cajaParaFecha"></div>
     </div>
 
-    <!-- CAJA QUE CARGAN JSON EN EL HTML / Y NUEVOS COMENTARIOS-->
-    <div class="container-comments" id="CajaDeNuevoComentario">
-      
-    </div>
+    <!-- CAJAS QUE CARGAN JSON EN EL HTML / Y NUEVOS COMENTARIOS-->
+    <div class="container-comments" id="CajaDeNuevoComentario"></div>
   </main> <br>
 
   <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a> <br>
@@ -135,9 +139,6 @@
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
   <script src='js/jquery.js'></script>
-  <script src='js/login.js'></script>
-  
-
 
 </body>
 

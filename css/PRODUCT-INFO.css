@@ -65,6 +65,12 @@ main {
   margin-top: 50px;
   position: relative;
 }
+
+main h5 {
+  font-size: 30px;
+  font-family: "Playfair Display", serif;
+
+}
 main h2 strong {
   color: rgb(13, 21, 68);
   text-align: center;
@@ -208,3 +214,35 @@ label:hover ~ label {
 input[type="radio"]:checked ~ label {
   color: orange;
 }
+
+/* barra de navegacion / boton de usuario entrega 4  */
+
+ul, ol{
+  list-style: none;
+
+}
+
+
+ .navUser li a:hover{
+   display: block;
+   background-color: salmon;
+   color: blue;
+   
+}
+
+.navUser > li{
+  float: left;
+}
+
+.navUser li a{
+  display: none;
+  position: absolute;
+  min-width: 140px;
+}
+
+.navUser li:hover > ul{
+  display: block;
+
+}
+
+
