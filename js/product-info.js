@@ -108,19 +108,3 @@ document.addEventListener("DOMContentLoaded", function (e) {
     document.getElementById('CajaDeNuevoComentario').innerHTML += body1
   });
 });
-
-// FUNCION PARA MARCAR LAS ESTRELLAS
-var contador;
-function calificar(item) {
-  
-  contador = item.id[0]; //primer caracter
-  let nombre = item.id.substring(1); // captura todos menos el primero
-
-  for (let i = 0; i < 5; i++) {
-    if (i < contador) {
-      document.getElementById(i + 1 + nombre).style.color = "orange";
-    } else {
-      document.getElementById(i + 1 + nombre).style.color = "black";
-    }
-  }
-}
