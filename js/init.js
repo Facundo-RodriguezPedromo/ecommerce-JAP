@@ -13,8 +13,7 @@ const PRODUCT_INFO_COMMENTS_URL =
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
-var user = sessionStorage.getItem("UserEmailID");
-var register = sessionStorage.getItem("NameTheRegisterID");
+
 var showSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "block";
 };
@@ -48,34 +47,56 @@ var getJSONData = function (url) {
     });
 };
 
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
+//AGREGA NOMBRE DE USUARIO A BARRA DE NAVEGACION
 document.addEventListener("DOMContentLoaded", function (e) {
   document.getElementById("UsuarioActualLogin") 
-  
-
-
-let agregarHtmldeUser = "";
+  var user = sessionStorage.getItem("UserEmailID");
+  let agregarHtmldeUser = "";
 agregarHtmldeUser =
-  `<a class="py-2 d-none d-md-inline-block" href="#"> ` + user + ` </a>`;
+
+` <div class="navUser">
+<a class="py-2 d-none d-md-inline-block" href="#" id="UsuarioActualLogin">` + user + `</a>
+<ul>
+  <li><a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a></li>
+  <li><a class="py-2 d-none d-md-inline-block" href="Mi_perfil.html">Mi perfil</a></li>
+  <li><a class="py-2 d-none d-md-inline-block" href="index.html">Cerrar sesión</a></li>
+</ul>
+</div>`;
 
 document.getElementById("UsuarioActualLogin").innerHTML = agregarHtmldeUser; 
- 
-
 });
 
 document.addEventListener("DOMContentLoaded", function (e) {
-  document.getElementById("UsuarioActualRegister") 
-  
-
-
+  document.getElementById("UsuarioActualLogin") 
+  var register = sessionStorage.getItem("NameTheRegisterID"); 
 let agregarHtmldeUser = "";
 agregarHtmldeUser =
-  `<a class="py-2 d-none d-md-inline-block" href="#"> ` + register + ` </a>`;
+`<div class="navUser">
+<a class="py-2 d-none d-md-inline-block" href="#" id="UsuarioActualLogin">` + register + `</a>
+<ul>
+  <li><a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a></li>
+  <li><a class="py-2 d-none d-md-inline-block" href="Mi_perfil.html">Mi perfil</a></li>
+  <li><a class="py-2 d-none d-md-inline-block" href="index.html">Cerrar sesión</a></li>
+</ul>
+</div>`;
 
-document.getElementById("UsuarioActualRegister").innerHTML = agregarHtmldeUser; 
+document.getElementById("UsuarioActualLogin").innerHTML = agregarHtmldeUser; 
 
 });
 
+//CARRUSEL DE IMAGENES EN PRODUCT-INFO.HTML entrega 4
 
+document.addEventListener("DOMContentLoaded", function (e){
+  const elementosCarousel = document.querySelectorAll('.carousel');
+  M.Carousel.init(elementosCarousel, {
+    duration:15,
+    dist:-80,
+    shift:5,
+    padding:5,
+    numVisible:3,
+    indicators:true,
+    noWrap:false,
+  });
+
+
+});

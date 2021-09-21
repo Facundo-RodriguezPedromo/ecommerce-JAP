@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/" />
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway:500,600&display=swap" rel="stylesheet">
+  <!-- Materialize galeria fotos-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- eSTILOS ICONOS-->
   <link href="https://file.myfontastic.com/XY7ox4FgKQJSYK8UhFNUw/icons.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet" />
@@ -23,37 +26,78 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100;0,200;0,500;1,100;1,200;1,300&family=Playfair+Display:ital@1&display=swap"
     rel="stylesheet">
-  <link href="css/PRODUCT-INFO.css" rel="stylesheet" />
+  <link href="css/PRODUCT-INFO.css" rel="stylesheet"/>
+  <link href="css/barra-navegacion.css" rel="stylesheet"/>
 
 </head>
 
 <body>
-
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <ul class="navUser" id="UsuarioActualLogin">
-          <li><a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a></li>
-          <li><a class="py-2 d-none d-md-inline-block" href="Mi_perfil.html">Mi perfil</a></li>
-          <li><a class="py-2 d-none d-md-inline-block" href="index.html">Cerrar sesión</a></li>
-      </ul>
-      
-      <div id="UsuarioActualRegister"></div>
+<header>
+  <nav id="navID" class="site-header sticky-top py-1 bg-dark">
+    <div class="container d-flex flex-column flex-md-row justify-content-between ">
+      <li><a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a></li>
+      <li><a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a></li>
+      <li><a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a></li>
+      <li><a id="DesapareceMenuUser" class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a></li>
+      <li>
+        <div class="navUser">
+          <a class="py-2 d-none d-md-inline-block" href="#" id="UsuarioActualLogin"></a>
+          <ul>
+            <li><a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a></li>
+            <li><a class="py-2 d-none d-md-inline-block" href="Mi_perfil.html">Mi perfil</a></li>
+            <li><a class="py-2 d-none d-md-inline-block" href="index.html">Cerrar sesión</a></li>
+          </ul>
+       </div>
+      </li>
     </div>
   </nav>
+</header>
 
   <!-- GALERIA DE IMAGENES AUTO -->
-  <h1 style="text-align:center">Chevrolet Onix Joy _ Potenciá tu actitud !</h1>
-  <ul class="galeria">
-    <li><a href=""><img src="img/prod1.jpg" alt=""></a></li>
-    <li><a href=""><img src="img/prod1_1.jpg" alt=""></a></li>
-    <li><a href=""><img src="img/prod1_2.jpg" alt=""></a></li>
-    <li><a href=""><img src="img/prod1_3.jpg" alt=""></a></li>
-    <li><a href=""><img src="img/prod1_4.jpg" alt=""></a></li>
-  </ul>
+  <div class="containerGaleriaAuto">
+    <div class="row">
+      <div class="col s12">
+        <h1 class="center-align titulo">Chevrolet Onix Joy _ Potenciá tu actitud !</h1>
+
+        <div class="carousel center-align">
+          <div class="carousel-item">
+            <p class="sabor">En la llegada</p>
+            <div class="linea-division"></div>
+            <img src="img/prod1.jpg" alt="">
+          </div>
+
+          <div class="carousel-item">
+            <p class="sabor">En la espera</p>
+            <div class="linea-division"></div>
+            <img src="img/prod1_1.jpg" alt="">
+          </div>
+
+          <div class="carousel-item">
+            <p class="sabor">En la salida</p>
+            <div class="linea-division"></div>
+            <img src="img/prod1_2.jpg" alt="">
+          </div>
+
+          <div class="carousel-item">
+            <p class="sabor">En la seguridad</p>
+            <div class="linea-division"></div>
+            <img src="img/prod1_3.jpg" alt="">
+          </div>
+
+          <div class="carousel-item">
+            <p class="sabor">En la mirada</p>
+            <div class="linea-division"></div>
+            <img src="img/prod1_4.jpg" alt="">
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+    
+  </div>
 
   <!-- INFO DEL AUTO CON TABLA -->
   <div class="container mt-5">
@@ -97,8 +141,8 @@
   <h2>Opiniones de nuestros de clientes</h2>
   <hr class="line">
 
-  <!-- CAJA DE COMENTARIOS-->
-  <main>
+   <!-- CAJA DE COMENTARIOS-->
+   <main>
     <h2><strong>Tu que opinas de este producto?</strong></h2>
     <div id="caja_comentarios">
       <div>
@@ -112,9 +156,7 @@
     </div>
 
     <!-- CAJAS QUE CARGAN JSON EN EL HTML / Y NUEVOS COMENTARIOS-->
-    <div class="container-comments" id="CajaDeNuevoComentario">
-      
-    </div>
+    <div class="container-comments" id="CajaDeNuevoComentario"></div>
   </main> <br>
 
   <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a> <br>
@@ -138,9 +180,12 @@
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
   <script src='js/jquery.js'></script>
+  
 
 </body>
 
