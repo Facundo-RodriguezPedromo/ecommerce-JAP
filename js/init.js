@@ -47,43 +47,6 @@ var getJSONData = function (url) {
     });
 };
 
-//AGREGA NOMBRE DE USUARIO A BARRA DE NAVEGACION
-document.addEventListener("DOMContentLoaded", function (e) {
-  document.getElementById("UsuarioActualLogin") 
-  var user = sessionStorage.getItem("UserEmailID");
-  let agregarHtmldeUser = "";
-agregarHtmldeUser =
-
-` <div class="navUser">
-<a class="py-2 d-none d-md-inline-block" href="#" id="UsuarioActualLogin">` + user + `</a>
-<ul>
-  <li><a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a></li>
-  <li><a class="py-2 d-none d-md-inline-block" href="Mi_perfil.html">Mi perfil</a></li>
-  <li><a class="py-2 d-none d-md-inline-block" href="index.html">Cerrar sesión</a></li>
-</ul>
-</div>`;
-
-document.getElementById("UsuarioActualLogin").innerHTML = agregarHtmldeUser; 
-});
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  document.getElementById("UsuarioActualLogin") 
-  var register = sessionStorage.getItem("NameTheRegisterID"); 
-let agregarHtmldeUser = "";
-agregarHtmldeUser =
-`<div class="navUser">
-<a class="py-2 d-none d-md-inline-block" href="#" id="UsuarioActualLogin">` + register + `</a>
-<ul>
-  <li><a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a></li>
-  <li><a class="py-2 d-none d-md-inline-block" href="Mi_perfil.html">Mi perfil</a></li>
-  <li><a class="py-2 d-none d-md-inline-block" href="index.html">Cerrar sesión</a></li>
-</ul>
-</div>`;
-
-document.getElementById("UsuarioActualLogin").innerHTML = agregarHtmldeUser; 
-
-});
-
 //CARRUSEL DE IMAGENES EN PRODUCT-INFO.HTML entrega 4
 
 document.addEventListener("DOMContentLoaded", function (e){
@@ -100,3 +63,29 @@ document.addEventListener("DOMContentLoaded", function (e){
 
 
 });
+
+//AGREGA NOMBRE DE USUARIO A BARRA DE NAVEGACION                      falta agregar ` + user + ` var user = sessionStorage.getItem("UserEmailID");
+document.addEventListener("DOMContentLoaded", function (e) {
+  
+  document.getElementById("UsuarioActualLogin") 
+  var register = sessionStorage.getItem("NameTheRegisterID"); 
+  
+  
+
+let agregarHtmldeUser = "";
+agregarHtmldeUser =
+` <li> <div class="navUser">
+<a class="py-2 d-none d-md-inline-block" href="#" id="UsuarioActualLogin">` + register + `</a>
+<ul>
+  <li><a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a></li>
+  <li><a class="py-2 d-none d-md-inline-block" href="my-profile.html">Mi perfil</a></li>
+  <li><a class="py-2 d-none d-md-inline-block" href="index.html">Cerrar sesión</a></li>
+</ul>
+</div> </li>`;
+
+document.getElementById("UsuarioActualLogin").innerHTML = agregarHtmldeUser; 
+
+});
+
+
+

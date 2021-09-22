@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
                   <div class="comments">
                     <div class="info-comments">
                       <div class="header">
-                        <h4>${dataProductOpinion[i].user}</h4>
-                        <h5>${dataProductOpinion[i].dateTime}</h5>
+                        <h4 id="NombreJson">${dataProductOpinion[i].user}</h4>
+                        
                       </div>
                         <p>${dataProductOpinion[i].description}</p>
                       <div>
@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                       </div>
                       <div class="footer">
                         <label class="icon-bubble"></label>
+                        <h5 id="fechaJson">${dataProductOpinion[i].dateTime}</h5>
                       </div>
                     </div>
                   </div>
@@ -104,8 +105,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
                      <div class="comments">
                        <div class="info-comments">
                          <div class="header">
-                           <h4>${suNombre}</h4>
-                           <h5>${FechaNueva}</h5>
+                           <h4 id="NombreJson">${suNombre}</h4>
+                           
                          </div>
                            <p>${comentaAqui}</p>
                          <div>
@@ -113,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                          </div>
                          <div class="footer">
                            <label class="icon-bubble"></label>
+                           <h5 id="fechaJson">${FechaNueva}</h5>
                          </div>
                        </div>
                      </div>

@@ -1,35 +1,81 @@
-h1 {
-  color: rgb(13, 21, 68);
-  margin: auto;
-  list-style: none;
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
-  font-family: "Glory", sans-serif;
-}
-hr {
-  text-align: center;
-}
-
-.icon-bubble {
-  border-color: rgb(82, 187, 248);
-  color: antiquewhite;
-}
-
-.lead {
-  color: rgb(13, 21, 68);
-  font-size: 37px;
-  font-family: "Playfair Display", serif;
-}
-
-
-/** estilos comentarios de json y nuevos*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
 }
+
+/* ENTREGA 4 GALERIA DE IMAGENES AUTO */
+h1 {
+  font-size: 50px;
+  font-family: "Dancing Script", cursive;
+  margin-bottom: 10px;
+  color: rgb(1, 14, 51);
+}
+
+.carousel {
+  min-height: 500px;
+}
+
+.carousel .carousel-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  width: 500px;
+  height: 500px;
+}
+
+.letrasEnFoto {
+  color: #fff;
+  margin: 7px 0;
+  font-size: 50px;
+  font-weight: 600;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
+  font-family: "Dancing Script", cursive;
+  margin-top: 0;
+}
+
+.linea-division {
+  width: 80%;
+  height: 2px;
+  background-color: #cccceb;
+}
+
+.carousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 15px;
+}
+
+/* INFO DEL AUTO CON TABLA */
+
+hr {
+  text-align: center;
+}
+h2 strong {
+  color: rgb(13, 21, 68);
+  font-size: 47px;
+  font-family: "Dancing Script", cursive;
+}
+
+table {
+  background-color: #2f2b5f;
+  color: white;
+}
+
+h2 {
+  color: rgb(1, 4, 19);
+  font-size: 47px;
+  font-family: "Dancing Script", cursive;
+}
+
+/* CAJA PARA CARGAR COMENTARIOS  NUEVOS */
 main {
   width: 100%;
   max-width: 800px;
@@ -38,58 +84,117 @@ main {
   position: relative;
 }
 
-main h5 {
-  font-size: 30px;
-  font-family: "Playfair Display", serif;
-
-}
 main h2 strong {
   color: rgb(13, 21, 68);
   text-align: center;
-  font-size: 39px;
-  font-family: "Playfair Display", serif;
+  font-size: 50px;
+  font-family: "Dancing Script", cursive;
 }
-.line {
-  width: 500px;
-  height: 2px;
+
+#caja_comentarios {
+  background-color: rgba(0, 47, 94, 0.616);
+  display: inline-block;
+  border-radius: 3%;
+  padding: 1%;
+}
+
+#NombreUsuarioComentario {
+  background: aliceblue;
+  width: 400px;
+  height: 40px;
+  border-radius: 3%;
+  font-family: cursive;
+  font-size: 25px;
+}
+
+main h5 {
+color: aliceblue;
+  font-size: 40px;
+  font-family: "Dancing Script", cursive;
+}
+
+#estrellasHTML {
+  background: aliceblue;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+}
+
+#comenta_aqui {
+  color: rgb(12, 57, 97);
+  font-family: cursive;
+  font-size: 25px;
+  background: aliceblue;
+  width: 600px;
+  height: 200px;
+}
+
+#button {
+  padding: 3% 5%;
+  margin: 2% 0;
+  background-color: darkblue;
+  color: white;
+  border-radius: 5%;
   border-style: none;
-  background: rgba(44, 77, 139, 0.281);
-  margin-top: 20px;
-  text-align: center;
 }
+
+#fechaActual {
+  color: rgb(0, 0, 0);;
+  font-size: 30px;
+  background-color:  rgba(241, 243, 245, 0.37);
+  border-radius: 3%;
+}
+
+
+/*CAJAS QUE CARGAN JSON EN EL HTML */
 .container-comments {
   margin-top: 20px;
-  border-radius: 10%;
-}
+  }
+
 .comments {
-  border-radius: 10%;
   display: flex;
 }
+
 .info-comments:hover {
-  border-radius: 10%;
-  border-bottom: 6px solid rgb(13, 21, 68);
+  border-radius: 3%;
+  border-bottom: 6px solid rgb(162, 164, 170);
 }
+
 .info-comments {
-  border-radius: 10%;
+  border-radius: 3%;
   margin-left: 20px;
-  background: rgb(67, 76, 128);
+  background: rgba(0, 47, 94, 0.616);
   transition: all 300ms;
   margin-top: 20px;
   border-bottom: 6px solid transparent;
 }
+
 .info-comments .header {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background: rgb(25, 26, 109);
+  background:  rgba(0, 47, 94, 0.616);
   color: rgb(242, 244, 247);
+  border-radius: 3%;
+
 }
+
+#fechaJson {
+font-size: 20px;
+}
+
+#NombreJson{
+  font-size: 30px;
+}
+
 .info-comments p {
   font-family: "Playfair Display", serif;
   border-radius: 10%;
   padding: 20px;
   font-size: 20px;
+  color: aliceblue;
 }
+
 .info-comments .footer {
   width: 100%;
   background: rgb(31, 103, 211);
@@ -99,67 +204,18 @@ main h2 strong {
   justify-content: space-between;
   border-radius: 10%;
 }
-.info-comments .footer h5 {
-  border-radius: 10%;
-  font-size: 14px;
-  cursor: pointer;
-}
-.info-comments .icon-heart {
-  border-radius: 10%;
-  color: teal;
-  transition: all 300ms;
+
+.icon-bubble {
+  color: rgb(245, 244, 243);
   font-size: 20px;
 }
-.info-comments .icon-heart:hover {
-  color: #d91111;
-  cursor: pointer;
+
+.icon-bubble:hover {
+  color: rgb(13, 21, 68);
+  font-size: 20px;
 }
 
-/* CAJAS QUE RECIBEN LA NUEVA OPINION */
-
-#caja_comentarios {
-  background-color: rgba(0, 47, 94, 0.616);
-  display: inline-block;
-}
-
-#NombreUsuarioComentario {
-  background: aliceblue;
-  width: 400px;
-  height: 40px;
-  border-radius: 5%;
-  font-family: cursive;
-  font-size: 30px;
-}
-
-#caja_comentarios {
-  border-radius: 5%;
-  padding: 1%;
-}
-#comenta_aqui {
-  color: rgb(12, 57, 97);
-  font-family: cursive;
-  font-size: 30px;
-  background: aliceblue;
-  width: 600px;
-  height: 200px;
-}
-
-#estrellasHTML{
-  background: aliceblue;
-  width: 40px;
-  height: 40px;
-  font-size: 30px;
-
-}
-#button {
-  padding: 3% 5%;
-  margin: 2% 0;
-  background-color: darkblue;
-  color: white;
-  border-radius: 15%;
-  border-style: none;
-}
-
+/* FOOTER DE PAGINA */
 h3 strong {
   color: rgb(2, 59, 40);
 }
