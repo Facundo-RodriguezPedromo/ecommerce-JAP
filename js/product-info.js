@@ -20,12 +20,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
                       <td>${dataProduct.currency}</td>
                       <td>${dataProduct.soldCount}</td>
                       <td>${dataProduct.category}</td>
-                      <td>${dataProduct.relatedProducts}</td>
-                     </tr>
+                    </tr>
                   </thead>
                        <tbody id="dataProductID"></tbody>
-                </table>` }
+                </table>
+             ` 
+   }
                             document.getElementById('dataProductID').innerHTML = body
+                            //${dataProduct.relatedProducts}
   }
 });
 
@@ -123,11 +125,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   });
 });
 
-
-
-
-
-// ENTREGA 4 BARRA NAV3GACION 
+// ENTREGA 4 BARRA NAVEGACION 
 
 document.addEventListener('DOMContentLoaded', function () {
   const userName = document.querySelector('#UsuarioActualLogin')

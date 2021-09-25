@@ -9,9 +9,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
         .catch(error => console.log(error))
     const mostrarData = (data) => {
 
-
-
-
         let body = ''
         for (let i = 0; i < data.length; i++) {
             body += `<tr><td><img src="${data[i].imgSrc}" width="300" height="200" </td>
@@ -201,6 +198,17 @@ function oredenarRelevancia() {
         console.log(aux2)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
