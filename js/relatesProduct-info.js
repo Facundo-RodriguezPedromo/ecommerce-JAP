@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         .catch(error => console.log(error))
     const mostrarData = (data) => {
 
+      
         let body = ''
        
             body += `<tr>
@@ -38,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
 
-// caja de comentarios entrega 4
+// CAJA Y FECHA PARA COMENTARIOS ENTREGA 3
   window.onload = function fechaNueva(){
     var fecha = new Date(); //Fecha actual
     var mes = fecha.getMonth()+1; //obteniendo mes
@@ -91,4 +92,26 @@ document.addEventListener("DOMContentLoaded", function (e) {
   });
   
 
-  
+  // ENTREGA 4 BARRA NAVEGACION MANU PARA EL BOTON USUARIO
+
+document.addEventListener('DOMContentLoaded', function () {
+  const userName = document.querySelector('#UsuarioActualLogin')
+  const list = document.querySelector('.navUser ul')
+
+  userName.addEventListener('mouseover', () => {
+      list.style.display = "block"
+  })
+  document.querySelector('.containerGaleriaAuto').addEventListener('mouseover', () => {
+      list.style.display = "none"
+  })
+  document.querySelector('h1').addEventListener('mouseover', () => {
+      list.style.display = "none"
+  })
+  document.querySelector('#DesapareceMenuUser').addEventListener('mouseover', () => {
+    list.style.display = "none"
+})
+
+
+
+
+});

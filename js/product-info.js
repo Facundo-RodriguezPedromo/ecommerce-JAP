@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
              ` 
    }
                             document.getElementById('dataProductID').innerHTML = body
-                            //${dataProduct.relatedProducts}
+                            
   }
 });
 
@@ -125,7 +125,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
   });
 });
 
-// ENTREGA 4 BARRA NAVEGACION 
+
+
+// ENTREGA 4 BARRA NAVEGACION menu de usuario
 
 document.addEventListener('DOMContentLoaded', function () {
   const userName = document.querySelector('#UsuarioActualLogin')

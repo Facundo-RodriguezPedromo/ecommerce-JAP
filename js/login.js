@@ -4,37 +4,33 @@
 
 /* FORMS VALIDATION */
 
-//* Validacion De Usuario e-commerce *//       
+//* Validacion De Usuario e-commerce *//
+
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("UserFormID").addEventListener('submit', validarFormularioDeUsuario);
-});
+ 
+ document.getElementById("Entrar").addEventListener("click", function (evento){
+     evento.preventDefault();
+    
+      var usuario = document.getElementById('UserEmailID').value;
+      var clave = document.getElementById('UserPasswordID').value;
+      if (usuario.length == 0 || clave.length == 0) {
+        swal('Los datos Correo Electronico y Contraseña son obligatorios', '', 'error');
+    
+      }
+      if (usuario.length >= 1 && clave.length >= 1) {
+        localStorage.setItem("UserEmailID", usuario)
+    
+        window.location.href = "./inicio.html";
+    
+      }
+  })
 
-function validarFormularioDeUsuario(evento) {
-  evento.preventDefault();
+  //* Validacion De Usuario Que Se Registra *//
+  document.getElementById("Registrarse").addEventListener("click", function (evento){
 
-  var usuario = document.getElementById('UserEmailID').value;
-  var clave = document.getElementById('UserPasswordID').value;
-  if (usuario.length == 0 || clave.length == 0) {
-    swal('Los datos Correo Electronico y Contraseña son obligatorios', '', 'error');
+    evento.preventDefault();
 
-  }
-  if (usuario.length >= 1 && clave.length >= 1) {
-    sessionStorage.setItem("UserEmailID", usuario)
-
-    window.location.href = "./inicio.html";
-
-  }
-}
-
-//* Validacion De Usuario Que Se Registra *//
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("RegistrationFormID").addEventListener('submit', validarFormularioDeRegistro);
-});
-
-function validarFormularioDeRegistro(evento) {
-  evento.preventDefault();
-
-  var usuarioRegister = document.getElementById('NameTheRegisterID').value;
+  var usuarioRegister = document.getElementById('NombreCompletoRegisterID').value;
   var usuarioMailRegister = document.getElementById('MailTheRegisterID').value;
   var usuarioNameRegister = document.getElementById('NameTheRegisterID').value;
   var clavePasswordRegister = document.getElementById('PasswordTheRegisterID').value;
@@ -45,11 +41,11 @@ function validarFormularioDeRegistro(evento) {
   if (usuarioRegister.length >= 1 && usuarioMailRegister.length >= 1 && usuarioNameRegister.length >= 1
     && clavePasswordRegister.length >= 1) {
 
-      sessionStorage.setItem("NameTheRegisterID", usuarioRegister)
+      localStorage.setItem("UserEmailID", usuarioRegister)
 
     window.location.href = "./inicio.html";
   }
-}
+});
 
 /** MOVIMIENTO DE CAJAS / LOGIN Y REGISTER **/
 
@@ -67,7 +63,6 @@ function Registration() {
   LoginBackBox.style.opacity = "1";
 }
 
-
 function Login() {
   FormLogin.style.display = "block";
   ContainerLoginRegister.style.left = "10px";
@@ -76,15 +71,9 @@ function Login() {
   LoginBackBox.style.opacity = "0";
 }
 
-
-
 document.getElementById("btn__iniciar-sesion").addEventListener("click", Login);
 document.getElementById("btn__registrarse").addEventListener("click", Registration);
 
-
-/** nombre de usuario en la barra */
-
-sessionStorage.setItem("UserEmailID", Usuario)
 /** login with google */
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
@@ -96,6 +85,13 @@ function onSignIn(googleUser) {
   console.log('Id Token ' + googleUser.getAuthResponse().id_token);
   window.location.href = "./inicio.html";
 }
+});
+
+/** nombre de usuario en la barra con google */
+
+
+
+
 
 /** FONDO ANIMADO PENDIENTE */
 
