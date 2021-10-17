@@ -11,15 +11,21 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         let body = ''
         for (let i = 0; i < data.length; i++) {
-            body += `<tr><td><img src="${data[i].imgSrc}" width="300" height="200" </td>
-                  <td>${data[i].name}</td> 
+            body += `<tr class="producto" ><td><img src="${data[i].imgSrc}" width="300" height="200" </td>
+                  <td >${data[i].name}</td> 
                   <td>${data[i].description} <br> <br> <a
                   style = "background-color:#082E76 "
                   type="button"
                   class="btn btn-outline-info btn btn-secondary btn-lg"
                   href="product-info.html">
                   Informacion
-                </a> </td>
+                </a> <br> <br> <a onclick='calcularPrecioFinal(`+1+`);'
+                style = "background-color:#082E76 "
+                type="button"
+                class="btn btn-outline-info btn btn-secondary btn-lg"
+               >
+                Agregar al carrito
+              </a></td>
                   <td>${data[i].cost}</td>                                                       
                   <td>${data[i].currency}</td>
                   <td>${data[i].soldCount}</td></tr>`
@@ -52,7 +58,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
             class="btn btn-outline-info btn btn-secondary btn-lg"
             href="product-info.html">
             Informacion
-          </a> </td>
+          </a> 
+          <br> <br> <a
+                style = "background-color:#082E76 "
+                type="button"
+                class="btn btn-outline-info btn btn-secondary btn-lg"
+                href="cart.html">
+                Agregar al carrito
+              </a></td>
             <td>${data[i].cost}</td>
             <td>${data[i].currency}</td>
             <td>${data[i].soldCount}</td></tr>`
@@ -101,7 +114,14 @@ function oredenarMenoraMayor() {
             class="btn btn-outline-info btn btn-secondary btn-lg"
             href="product-info.html">
             Informacion
-          </a> </td>
+          </a> 
+          <br> <br> <a
+                style = "background-color:#082E76 "
+                type="button"
+                class="btn btn-outline-info btn btn-secondary btn-lg"
+                href="cart.html">
+                Agregar al carrito
+              </a></td>
             <td>${aux2[j].cost}</td>
             <td>${aux2[j].currency}</td>
             <td>${aux2[j].soldCount}</td></tr>`
@@ -145,7 +165,14 @@ function oredenarMayoraMenor() {
             class="btn btn-outline-info btn btn-secondary btn-lg"
             href="product-info.html">
             Informacion
-          </a> </td>
+          </a> 
+          <br> <br> <a
+                style = "background-color:#082E76 "
+                type="button"
+                class="btn btn-outline-info btn btn-secondary btn-lg"
+                href="cart.html">
+                Agregar al carrito
+              </a></td>
             <td>${aux2[j].cost}</td>
             <td>${aux2[j].currency}</td>
             <td>${aux2[j].soldCount}</td></tr>`
@@ -188,7 +215,14 @@ function oredenarRelevancia() {
             class="btn btn-outline-info btn btn-secondary btn-lg"
             href="product-info.html">
             Informacion
-          </a> </td>
+          </a> 
+          <br> <br> <a
+                style = "background-color:#082E76 "
+                type="button"
+                class="btn btn-outline-info btn btn-secondary btn-lg"
+                href="cart.html">
+                Agregar al carrito
+              </a></td>
             <td>${aux2[j].cost}</td>
             <td>${aux2[j].currency}</td>
             <td>${aux2[j].soldCount}</td></tr>`
@@ -198,6 +232,41 @@ function oredenarRelevancia() {
         console.log(aux2)
     }
 }
+
+
+
+
+ /*ENTREGA 5 AGREGAR AL CARRITO*/
+var cantidad=0;
+ var AUTO1 = {
+    id:1,
+    name: "Chevrolet Onix Joy",
+    description: "Generación 2019, variedad de colores. Motor 1.0, ideal para ciudad.",
+    cost: Number(13500),
+    imgSrc: "img/prod1.jpg",
+    soldCount: 14,
+    costoFinal:0
+  };
+  console.log(AUTO1);
+  function calcularPrecioFinal(id){
+    if(id===1){
+      cantidad=+1;
+      AUTO1.costoFinal=AUTO1.costoFinal+cantidad*AUTO1.cost;
+    }
+    console.log(AUTO1);
+  }
+
+
+function agregarAlCarrito() { 
+
+
+}
+
+
+
+
+
+
 
 
 

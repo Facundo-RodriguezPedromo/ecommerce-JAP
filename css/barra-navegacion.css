@@ -35,3 +35,78 @@ header {
   
 }
 
+/* ENTREGA 5 carrito del usuario */
+
+
+h1 {
+  text-align: center;
+  color: rgb(1, 4, 19);
+}
+
+/* DESDE AQUI EMPIEZA LA SECCIÓN DEL CARRITO */
+.tabla-calculo {
+  display: flex;
+  justify-content: center;
+}
+.tabla {
+  width:80%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  color: white;
+  margin-bottom: 2rem;
+  empty-cells: hide;
+  border-radius: 10px;
+}
+
+.border-top-left {
+  border-top-left-radius: 10px;
+}
+.border-top-right {
+  border-top-right-radius: 10px;
+}
+.border-bottom-right {
+  border-bottom-right-radius: 10px;
+}
+.border-bottom-left {
+  border-bottom-left-radius: 10px;
+}
+th {
+  font-size: 1.1rem;
+  background: rgba(12, 53, 94, 0.7);
+}
+th, td, tr {
+  border: var(--border-table);
+  text-align: center;
+  padding: .4rem 0;
+}
+
+.precio-tabla::before {
+  content: 'US$';
+  padding-right: 0.4rem;
+}
+.button {
+  margin: 0 .4rem;
+  border: var(--border-table);
+  background: hsla(250, 70%, 50%, .7);
+  color: white;
+  cursor: pointer;
+}
+.negrita {
+  font-weight: bold;
+}
+.none {
+  background: transparent;
+  border: none;
+}
+
+
+
+/* Imagen */
+.contenedor-img {
+  
+  height: 127px;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+}
