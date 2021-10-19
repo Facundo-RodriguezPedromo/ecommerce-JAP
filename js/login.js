@@ -85,6 +85,7 @@ function onSignIn(googleUser) {
   console.log('Id Token ' + googleUser.getAuthResponse().id_token);
   window.location.href = "./inicio.html";
 }
+onSignIn();
 });
 
 /** nombre de usuario en la barra con google */
