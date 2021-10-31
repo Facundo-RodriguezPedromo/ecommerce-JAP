@@ -11,26 +11,43 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         let body = ''
         for (let i = 0; i < data.length; i++) {
-            body += `<tr class="producto" ><td><img src="${data[i].imgSrc}" class="src_${i}" width="300" height="200"></td>
-                  <td class='name_${i}'>${data[i].name}</td> 
-                  <td>${data[i].description} <br> <br> <a
-                  style = "background-color:#082E76 "
-                  type="button"
-                  class="btn btn-outline-info btn btn-secondary btn-lg"
-                  href="product-info.html">
-                  Informacion
-                </a> <br> <br> <a
-                style = "background-color:#082E76 "
-                type="button"
-                class="btn btn-outline-info btn btn-secondary btn-lg"
-                href="javascript:agregarAlCarrito(${i})">
-                Agregar al carrito
-              </a></td>
-                  <td class='unitCost_${i}'>${data[i].cost}</td>                                                       
-                  <td class='currency_${i}'>${data[i].currency}</td>
-                  <td>${data[i].soldCount}</td></tr>`
+
+body += `
+       <div class="col-md-4">
+        <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+        <img src="${data[i].imgSrc}" class="src_${i}" width="300" height="200">
+        <h3 class='name_${i}'>${data[i].name}</h3>
+        <h5>${data[i].description}</h5>
+        <br> <br> <a
+        style = "background-color:#082E76 "
+        type="button"
+        class="btn btn-outline-info btn btn-secondary btn-lg"
+        href="product-info.html">
+        Informacion
+      </a> <br> <br> <a
+      style = "background-color:#082E76 "
+      type="button"
+      class="btn btn-outline-info btn btn-secondary btn-lg"
+      href="javascript:agregarAlCarrito(${i})">
+      Agregar al carrito
+    </a>
+
+          <div class="card-body">
+          <p class='unitCost_${i}'> 
+          ${data[i].cost}
+           </p>
+           <p class='currency_${i}'> 
+           ${data[i].currency}
+           </p>
+           <p> 
+            ${data[i].soldCount}
+                          </p>
+          </div>
+        </a>
+      </div>
+      `
         }
-        document.getElementById('data').innerHTML = body
+        document.getElementById('producto').innerHTML = body
     }
 
     /*ENTREGA 2 FILTROS POR PRECIOS*/
@@ -50,18 +67,38 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
                     aux = data[i];
 
-                    ListaConFiltro += `<tr><td><img src="${data[i].imgSrc}" width="300" height="200" </td>
-            <td>${data[i].name}</td>
-            <td>${data[i].description}<br> <br> <a
-            style = "background-color:#082E76 "
-            type="button"
-            class="btn btn-outline-info btn btn-secondary btn-lg"
-            href="product-info.html">
-            Informacion
-          </a> </td>
-            <td>${data[i].cost}</td>
-            <td>${data[i].currency}</td>
-            <td>${data[i].soldCount}</td></tr>`
+                    ListaConFiltro += ` <div class="col-md-4">
+                    <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                    <img src="${data[i].imgSrc}" class="src_${i}" width="300" height="200">
+                    <h3 class='name_${i}'>${data[i].name}</h3>
+                    <h5>${data[i].description}</h5>
+                    <br> <br> <a
+                    style = "background-color:#082E76 "
+                    type="button"
+                    class="btn btn-outline-info btn btn-secondary btn-lg"
+                    href="product-info.html">
+                    Informacion
+                  </a> <br> <br> <a
+                  style = "background-color:#082E76 "
+                  type="button"
+                  class="btn btn-outline-info btn btn-secondary btn-lg"
+                  href="javascript:agregarAlCarrito(${i})">
+                  Agregar al carrito
+                </a>
+            
+                      <div class="card-body">
+                      <p class='unitCost_${i}'> 
+                      ${data[i].cost}
+                       </p>
+                       <p class='currency_${i}'> 
+                       ${data[i].currency}
+                       </p>
+                       <p> 
+                        ${data[i].soldCount}
+                                      </p>
+                      </div>
+                    </a>
+                  </div>`
 
                     /*ENTREGA 2 RESETEO PARA LOS CAMPOS MIN Y MAX*/
                     $(document).ready(function () {
@@ -71,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                         });
                     });
 
-                } console.log(aux); document.getElementById('data').innerHTML = ListaConFiltro
+                } console.log(aux); document.getElementById('producto').innerHTML = ListaConFiltro
             }
         }
     }
@@ -99,21 +136,41 @@ function oredenarMenoraMayor() {
         });
         let OrdenadosMayor = ''
         for (j = 0; j < aux2.length; j++) {
-            OrdenadosMayor += `<tr><td><img src="${aux2[j].imgSrc}" width="300" height="200" </td>
-            <td>${aux2[j].name}</td>
-            <td>${aux2[j].description}<br> <br> <a
+            OrdenadosMayor += ` <div class="col-md-4">
+            <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+            <img src="${aux2[j].imgSrc}" class="src_${i}" width="300" height="200">
+            <h3 class='name_${i}'>${aux2[j].name}</h3>
+            <h5>${aux2[j].description}</h5>
+            <br> <br> <a
             style = "background-color:#082E76 "
             type="button"
             class="btn btn-outline-info btn btn-secondary btn-lg"
             href="product-info.html">
             Informacion
-          </a> </td>
-            <td>${aux2[j].cost}</td>
-            <td>${aux2[j].currency}</td>
-            <td>${aux2[j].soldCount}</td></tr>`
+          </a> <br> <br> <a
+          style = "background-color:#082E76 "
+          type="button"
+          class="btn btn-outline-info btn btn-secondary btn-lg"
+          href="javascript:agregarAlCarrito(${i})">
+          Agregar al carrito
+        </a>
+    
+              <div class="card-body">
+              <p class='unitCost_${i}'> 
+              ${aux2[j].cost}
+               </p>
+               <p class='currency_${i}'> 
+               ${aux2[j].currency}
+               </p>
+               <p> 
+                ${aux2[j].soldCount}
+                              </p>
+              </div>
+            </a>
+          </div>`
 
 
-        } document.getElementById('data').innerHTML = OrdenadosMayor
+        } document.getElementById('producto').innerHTML = OrdenadosMayor
         console.log(aux2)
     }
 }
@@ -143,21 +200,41 @@ function oredenarMayoraMenor() {
         });
         let OrdenadosMenor = ''
         for (j = 0; j < aux2.length; j++) {
-            OrdenadosMenor += `<tr><td><img src="${aux2[j].imgSrc}" width="300" height="200" </td>
-            <td>${aux2[j].name}</td>
-            <td>${aux2[j].description}<br> <br> <a
+            OrdenadosMenor += `<div class="col-md-4">
+            <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+            <img src="${aux2[j].imgSrc}" class="src_${i}" width="300" height="200">
+            <h3 class='name_${i}'>${aux2[j].name}</h3>
+            <h5>${aux2[j].description}</h5>
+            <br> <br> <a
             style = "background-color:#082E76 "
             type="button"
             class="btn btn-outline-info btn btn-secondary btn-lg"
             href="product-info.html">
             Informacion
-          </a> </td>
-            <td>${aux2[j].cost}</td>
-            <td>${aux2[j].currency}</td>
-            <td>${aux2[j].soldCount}</td></tr>`
+          </a> <br> <br> <a
+          style = "background-color:#082E76 "
+          type="button"
+          class="btn btn-outline-info btn btn-secondary btn-lg"
+          href="javascript:agregarAlCarrito(${i})">
+          Agregar al carrito
+        </a>
+    
+              <div class="card-body">
+              <p class='unitCost_${i}'> 
+              ${aux2[j].cost}
+               </p>
+               <p class='currency_${i}'> 
+               ${aux2[j].currency}
+               </p>
+               <p> 
+                ${aux2[j].soldCount}
+                              </p>
+              </div>
+            </a>
+          </div>`
 
 
-        } document.getElementById('data').innerHTML = OrdenadosMenor
+        } document.getElementById('producto').innerHTML = OrdenadosMenor
         console.log(aux2)
     }
 }
@@ -186,25 +263,44 @@ function oredenarRelevancia() {
         });
         let OrdenadosRelevancia = ''
         for (j = 0; j < aux2.length; j++) {
-            OrdenadosRelevancia += `<tr><td><img src="${aux2[j].imgSrc}" width="300" height="200" </td>
-            <td>${aux2[j].name}</td>
-            <td>${aux2[j].description}<br> <br> <a
+            OrdenadosRelevancia += `<div class="col-md-4">
+            <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+            <img src="${aux2[j].imgSrc}" class="src_${i}" width="300" height="200">
+            <h3 class='name_${i}'>${aux2[j].name}</h3>
+            <h5>${aux2[j].description}</h5>
+            <br> <br> <a
             style = "background-color:#082E76 "
             type="button"
             class="btn btn-outline-info btn btn-secondary btn-lg"
             href="product-info.html">
             Informacion
-          </a> </td>
-            <td>${aux2[j].cost}</td>
-            <td>${aux2[j].currency}</td>
-            <td>${aux2[j].soldCount}</td></tr>`
+          </a> <br> <br> <a
+          style = "background-color:#082E76 "
+          type="button"
+          class="btn btn-outline-info btn btn-secondary btn-lg"
+          href="javascript:agregarAlCarrito(${i})">
+          Agregar al carrito
+        </a>
+    
+              <div class="card-body">
+              <p class='unitCost_${i}'> 
+              ${aux2[j].cost}
+               </p>
+               <p class='currency_${i}'> 
+               ${aux2[j].currency}
+               </p>
+               <p> 
+                ${aux2[j].soldCount}
+                              </p>
+              </div>
+            </a>
+          </div>`
 
 
-        } document.getElementById('data').innerHTML = OrdenadosRelevancia
+        } document.getElementById('producto').innerHTML = OrdenadosRelevancia
         console.log(aux2)
     }
 }
-
  /*ENTREGA 5 AGREGAR AL CARRITO*/
 function agregarAlCarrito(i) {
 
@@ -217,9 +313,6 @@ function agregarAlCarrito(i) {
     }
     localStorage.setItem("producto_" + i, JSON.stringify(prod));
 }
-
-
-
 
 
 

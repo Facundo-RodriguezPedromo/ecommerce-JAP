@@ -9,8 +9,11 @@
   <meta name="description" content="" />
   <title>eMercado - Todo lo que busques está aquí</title>
   
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/" />
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous">
 
   <style>
     .bd-placeholder-img {
@@ -56,27 +59,50 @@
       </div>
     </nav>
   </header>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width: auto; top: 0">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>
-        Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).
-      </p>
-      <hr />
-      <p class="mb-0">
-        Para saber qué debes hacer, fijate en la actividad en CREA
-        correspondiente a esta entrega.
-      </p>
-    </div>
+
+  <div class="container mt-5">
+        
+    <form id="formularioPerfil">
+      <div class="fotoPerfil">
+          <img class="foto" src="img/usuariosquecomentan.jpg" alt="">
+          <div id="DatosNuevosDeUsuario" class="mt-4"></div>
+          <h1 class="user-name">
+              <i class="material-icons">
+                  accessibility
+              </i>
+              Mi perfil
+          </h1>
+          
+      </div>
+      <ul id="datosDePerfil" class="datosUsuario">
+          <li> 
+            <h5 id="nombreH5">Nombre completo</h5>
+            <input type="text" id="Nombre" class="form-control my-3" disabled>
+            <span></span>
+          </li>
+          <li>
+            <h5>Edad</h5>
+            <input type="text" id="Edad" class="form-control my-3" disabled>
+            <span></span>
+          </li>
+          <li>
+            <h5>E-mail</h5>
+            <input type="text" id="E-mail" class="form-control my-3" disabled>
+            <span></span>
+          </li>
+          <li>
+            <h5>Telefono</h5>
+            <input type="text" id="Telefono" class="form-control my-3" disabled>
+            <span></span>
+          </li>
+        </ul>
+        <div id="recibeBotonGuardar"></div>
+        <button id="actualizarDatos" class="btn btn-success">Actualizar datos</button>
+    </form>
+    
   </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>
-        Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la
-        letra del obligatorio.
-      </p>
-    </div>
+
+  
   </footer>
   <div class="alert fade alert-success" role="alert" id="alertResult">
     <span id="resultSpan"></span>
@@ -92,6 +118,12 @@
       <div></div>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
@@ -99,6 +131,7 @@
   <script src="js/my-profile.js"></script>
   <script src="js/product-info.js"></script>
   <script src="js/login.js"></script>
+  
 </body>
 
 </html>

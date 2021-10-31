@@ -110,3 +110,48 @@ th, td, tr {
 img {
   width: 100%;
 }
+
+/* Entrega 6 Mi perfil */
+
+.fotoPerfil {
+  text-align: center;
+  height: 300px;
+  padding: 12px;
+  
+}
+
+.foto{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.user-name{
+  font-size: 18px;
+  margin-top: 14px;
+}
+
+.datosUsuario{
+  list-style: none;
+  text-align: center;
+  padding: 0;
+
+}
+
+.datosUsuario li {
+  display: inline-block;
+  margin: 5px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  color: rgb(67, 65, 161);
+}
+
+#DatosNuevosDeUsuario{
+  float: left;
+}
