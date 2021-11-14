@@ -51,20 +51,20 @@
               <li><a class="py-2 d-none d-md-inline-block" href="my-profile.html">Mi perfil</a></li>
               <li><a class="py-2 d-none d-md-inline-block" href="index.html">Cerrar sesión</a></li>
             </ul>
-         </div>
+          </div>
         </li>
       </div>
     </nav>
   </header>
 
-     
+
 
   <h1>Carrito de compras</h1>
 
   <!-- TABLA -->
   <div class="tabla-calculo" id="tabla-calculo">
     <table class="tabla">
-      
+
       <thead class="cabecera border-top-right">
         <tr>
           <th class="border-top-left">Nombre Producto</th>
@@ -76,13 +76,13 @@
         </tr>
       </thead>
       <tbody id="carrito-body"></tbody>
-      
-    </table> 
+
+    </table>
     <div style="margin-left:30px">
-        <a href=javascript:limpiarCarrito()>Limpiar carrito</a>
+      <a href=javascript:limpiarCarrito()>Limpiar carrito</a>
     </div>
-    
-    
+
+
   </div>
 
 
@@ -90,22 +90,24 @@
 
 
 
-  <h5 class="mb-3">Tipo de publicación</h5>
+  <h5 class="mb-3">Tipo de envío</h5>
   <div class="d-block my-3">
     <div class="custom-control custom-radio">
-      <input id="goldradio" onchange="calcularEnvio()" name="publicationType" type="radio" class="custom-control-input" checked=""
-        required="" />
+      <input id="goldradio" onchange="calcularEnvio()" name="publicationType" type="radio" class="custom-control-input"
+        checked="" required="" />
       <label class="custom-control-label" for="goldradio">Gold (13%)</label>
     </div>
     <div class="custom-control custom-radio">
-      <input id="premiumradio" onchange="calcularEnvio()" name="publicationType" type="radio" class="custom-control-input" required="" />
+      <input id="premiumradio" onchange="calcularEnvio()" name="publicationType" type="radio"
+        class="custom-control-input" required="" />
       <label class="custom-control-label" for="premiumradio">Premium (7%)</label>
     </div>
     <div class="custom-control custom-radio">
-      <input id="standardradio" onchange="calcularEnvio()" name="publicationType" type="radio" class="custom-control-input" required="" />
+      <input id="standardradio" onchange="calcularEnvio()" name="publicationType" type="radio"
+        class="custom-control-input" required="" />
       <label class="custom-control-label" for="standardradio">Estándar (3%)</label>
     </div>
-   
+
   </div>
   <hr class="mb-4" />
   <h4 class="mb-3">Costos</h4>
@@ -140,23 +142,95 @@
           justify-content-between
           lh-condensed
         ">
-        <div>
-            <h6 class="my-0">Total</h6>
-            <h6 class="my-0">$ <label id="lbl_total">0.00</label></h6>
-        </div>
-        <span class="text-muted" id="comissionText">-</span>
+      <div>
+        <h6 class="my-0">Total</h6>
+        <h6 class="my-0">$ <label id="lbl_total">0.00</label></h6>
+      </div>
+      <span class="text-muted" id="comissionText">-</span>
     </li>
   </ul>
   <hr class="mb-4" />
-  <button class="btn btn-primary btn-lg" type="submit">Comprar</button>
-</form>
-</div>
-</div>
-</div>
+
+
+  <!-- ENTREGA 7 -->
+
+
+  <!-- SELECCIONAR FORMA DE PAGO -->
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Seleccionar forma de pago
+  </button>
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Selecciona tu forma de pago</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <input type="radio" /> <label>Tarjeta de credito</label>
+          </div>
+          <div>
+            <input type="radio" /> <label>Transferencia bancaria</label>
+          </div>
+
+
+        </div>
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Seleccionar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROPORCIONAR DATOS PARA ENVIO ENVIO -->
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#metodoEnvio">
+    Proporcionar datos para el envio
+  </button>
+
+
+  <div class="modal fade" id="metodoEnvio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Proporcionar datos para el envio</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <input id="direccionDeComprador" type="text" required/> <label>Dirección: calle, número, esquina.</label>
+          </div>
+          <div>
+            <input id="paisDeComprador" type="text" required/> <label>País</label>
+          </div>
 
 
 
-<div id="spinner-wrapper">
+
+        </div>
+        <div class="modal-footer">
+
+          <button id="enviaDatosCompra" type="button" class="btn btn-primary" data-dismiss="modal">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
       <div></div>
@@ -171,6 +245,7 @@
   <script src="js/cart.js"></script>
   <script src="js/product-info.js"></script>
   <script src="js/login.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

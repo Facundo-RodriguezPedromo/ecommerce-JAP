@@ -113,3 +113,20 @@ localStorage.removeItem("producto_3");
 
 window.location.reload();
 }
+
+ //* ENTREGA 7 Validacion para enviar datos de una compra*//
+ document.getElementById("enviaDatosCompra").addEventListener("click", function (evento){
+ 
+  
+console.log("se")
+var direccoinDeComprador = document.getElementById('direccionDeComprador').value;
+var paisDeComprador = document.getElementById('paisDeComprador').value;
+
+if (direccoinDeComprador.length == 0 || paisDeComprador.length == 0) {
+  swal('Debe completar todos los datos', '', 'error');
+}
+if (direccoinDeComprador.length >= 1 && paisDeComprador.length >= 1 ) {
+
+  swal('Su compra fue realizada con exito', '', 'success');
+}
+});
